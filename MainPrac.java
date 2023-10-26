@@ -2,16 +2,35 @@ public class MainPrac {
 
     public static void main(String[] args) {
 
+        //public int removeElement(int[] nums, int val) {
         /*
-        Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
-        Output: [1,2,2,3,5,6]**/
-        int[] nums1 = {1,2,3,0,0,0};
-        int m = 3;
-        int[] nums2 = {2,5,6};
-        int n = 3;
+         * Input: nums = [3,2,2,3], val = 3
+            Output: 2, nums = [2,2,_,_]
+            Explanation: Your function should return k = 2, with the first two elements of nums being 2.
+            It does not matter what you leave beyond the returned k (hence they are underscores).
+         */
+        // int[] nums = {3,2,2,3};
+        // int val = 3;
 
-        MergeSortedArray sol = new MergeSortedArray();
-       //public void merge(int[] nums1, int m, int[] nums2, int n) {
-        sol.merge(nums1, m , nums2, n);
+        // RemovedArray sol = new RemovedArray();
+        
+        // //int solution = sol.removeElement(nums , val);
+        // //System.out.println("solution:::"+ solution);
+
+
+        // int[] nums2 = {1,1,2};
+        // RemoveDuplicateSortArray sol2 = new RemoveDuplicateSortArray();
+
+        // int solution2 = sol2.removeDuplicates(nums2);
+        // System.out.println(solution2);
+
+        int[] arr = {10,2,5,3};
+
+        CheckIfDoubleExits sol = new CheckIfDoubleExits();
+    
+        boolean result = sol.checkIfExist(arr);
+
+        System.out.println(result);
+
     }
 }

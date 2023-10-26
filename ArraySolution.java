@@ -3,6 +3,8 @@ public class ArraySolution {
      //Max Consecutive Ones
     public int findMaxConsecutiveOnes(int[] nums) {
        
+        //int[] nums = {1,1,0,1,1,1};
+
         int consecutive = 0; 
         int maxConsecutive = 0;
 

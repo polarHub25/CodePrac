@@ -27,14 +27,12 @@ public class SquaresSortedArray {
             System.out.println(powArr[i]);
         }
 
-        //sort 방식
         Arrays.sort(powArr);
 
-        //스트림 방식
-        return Arrays.stream(nums)
-                .map(num -> num * num)
-                .sorted()
-                .toArray();
+            return Arrays.stream(nums)
+                    .map(num -> num * num)
+                    .sorted()
+                    .toArray();
 
 
     }
