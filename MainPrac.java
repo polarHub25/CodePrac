@@ -2,14 +2,27 @@ public class MainPrac {
 
     public static void main(String[] args) {
 
+        MoveZeroes sol = new MoveZeroes();
 
-        int[] arr = {10,2,5,3};
+        int[] nums = {0,1,0,3,12};
 
-        CheckIfDoubleExits sol = new CheckIfDoubleExits();
-    
-        boolean result = sol.checkIfExist(arr);
+        //sol.moveZeroes(nums);
 
-        System.out.println(result);
+
+        SortArrayByParity sol2 = new SortArrayByParity();
+        /**
+         * Input: nums = [3,1,2,4]
+           Output: [2,4,3,1]
+         */
+        int[] nums2 = {3,1,2,4};
+
+        sol2.sortArrayByParity(nums2);
+        
+
+        RemoveElement sol3 = new RemoveElement();
+        int[] nums3 = {3,2,2,3};
+        int val = 3; 
+        int result = sol3.removeElement(nums3, val);
 
     }
 }
