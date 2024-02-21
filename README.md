@@ -1,2 +1,2 @@
 # LeetCodePrac
-I will become a global software engineer. So, I made this repository :)
+I eager to take a global software engineer. So, I made this repository :)
