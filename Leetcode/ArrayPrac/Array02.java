@@ -1,3 +1,4 @@
+package ArrayPrac;
 
 public class Array02 {
     
