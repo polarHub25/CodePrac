@@ -1,5 +1,7 @@
 package ArrayPrac;
 
+import java.util.HashSet;
+
 public class Array04 {
     public static void main(String[] args) {
         
@@ -11,11 +13,27 @@ public class Array04 {
         // int[] prices = {7,1,5,3,6,4};
         // int sol2 = array04.maxProfit(prices);
 
-        int[] nums = {1,2,3,4,5,6,7};
-        int k = 3;
+        // int[] nums = {1,2,3,4,5,6,7};
+        // int k = 3;
+
+        int[] nums = {2,14,18,22,22};
+        boolean sol = array04.containsDuplicate(nums);
 
     }
     
+    public boolean containsDuplicate(int[] nums) {
+     
+        HashSet<Integer> set = new HashSet<>();
+        for(int num : nums){
+            if(set.contains(num)){
+                return true;
+            }
+            set.add(num);
+        }
+     
+        return false;   
+    }
+
     public void rotate(int[] nums, int k) {
      
         /** Input: nums = [1,2,3,4,5,6,7], k = 3
