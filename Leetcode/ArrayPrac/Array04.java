@@ -16,8 +16,28 @@ public class Array04 {
         // int[] nums = {1,2,3,4,5,6,7};
         // int k = 3;
 
-        int[] nums = {2,14,18,22,22};
-        boolean sol = array04.containsDuplicate(nums);
+        // int[] nums = {2,14,18,22,22};
+        // boolean sol = array04.containsDuplicate(nums);
+
+// + 연산자
+long start = System.nanoTime();
+String result = "";
+for (int i = 0; i < 10000; i++) {
+    result += "test";
+}
+long end = System.nanoTime();
+System.out.println("Time with + operator: " + (end - start) + " ns");
+
+// StringBuilder
+start = System.nanoTime();
+StringBuilder sb = new StringBuilder();
+for (int i = 0; i < 10000; i++) {
+    sb.append("test");
+}
+result = sb.toString();
+end = System.nanoTime();
+System.out.println("Time with StringBuilder: " + (end - start) + " ns");
+
 
     }
     
