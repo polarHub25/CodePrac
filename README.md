@@ -1,2 +1,2 @@
 # CodePrac
-I eager to take a global software engineer. So, I made this repository :)
+This repository is for solving coding challenges and organizing related algorithms and data structures. :) 
