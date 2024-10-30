@@ -6,19 +6,22 @@ public class Prepare {
 
     public static void main(String[] args) {
         
-        // String input = "pwwkew";
-
          Prepare pre = new Prepare();
-        // int output = pre.longestSubstring(input);
 
-        // System.out.println("output :: " + output);
-
-        String s = "babad";
+        String s = "PAHNAPLSIIGYIR";
+        int numRows = 3;
         
-        String output = pre.longestPalindrome(s);
+        String output = pre.convert(s, numRows);
         System.out.println("output :: " + output);
 
     }
+
+    // ZigzagConversion
+    public String convert(String s, int numRows) {
+        return "";
+    }
+
+
 
     //Longest Palindromic Substring
     public String longestPalindrome(String s) {
