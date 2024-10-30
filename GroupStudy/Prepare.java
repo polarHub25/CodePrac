@@ -17,8 +17,26 @@ public class Prepare {
     }
 
     // ZigzagConversion
+    // https://leetcode.com/problems/zigzag-conversion/
     public String convert(String s, int numRows) {
-        return "";
+        // 시간복잡도는 O(n) -> 2중 반복문이지만, 문자열에 한번씩만 추가하는 연산을 하므로
+        // 공간복잡도 O(n) => 문자열 저장을 위한 공간을 사용하므로
+
+        if(numRows == 1 || numRows >= s.length()) return s;
+
+        StringBuilder result = new StringBuilder();
+        int cycle = 2 * (numRows - 1); // 위에서 아래로의 한번 사이클
+
+        for(int i = 0; i< numRows; i++){
+            for(int j = i; j < s.length(); j += cycle){
+                result.append(s.charAt(j));
+                if(i > 0 && i < numRows - 1 && ( j + cycle - 2 * i ) < s.length()){
+                    result.append(s.charAt(j + cycle - 2 * i));
+                }
+            }
+        }
+
+        return new String(result);
     }
 
 
