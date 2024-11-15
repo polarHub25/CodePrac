@@ -10,13 +10,47 @@ public class Prepare {
         
         Prepare pre = new Prepare();
 
-        int[] height = {1,8,6,2,5,4,8,3,7};;
+        int num = 3749;
         
-        int output = pre.maxArea(height);
-        System.out.println("output :: " + output);
+        String output = pre.intToRoman(num);
+        System.out.println("Integer: " + num + " -> Roman: " + output);
 
     }
 
+    // 12. Integer to Roman
+    // https://leetcode.com/problems/integer-to-roman/description/
+    public String intToRoman(int num) {
+       // 시간 복잡도 : O(1) 배열의 크기가 고정, 반복 횟수도 일정 num의 크기가 1, 1000, 3999여도 실행 시간은 거의 동일
+       // 공간 복잡도 : O(1) 추가적인 메모리 사용없이 상수 공간만 사용 
+        int[] values = {1000,500,100,50,10,5,1};
+        String[] symbols = {"M", "D", "C", "L", "X", "V", "I"};
+
+        StringBuilder output = new StringBuilder();
+
+        for(int i = 0; i < values.length; i++){
+            while(num >= values[i]){
+                num -= values[i];
+                output.append(symbols[i]);
+            }
+
+            if (i % 2 == 0 && i < values.length - 2) {
+                int subtractionValue = values[i] - values[i + 2];
+                if (num >= subtractionValue) {
+                    num -= subtractionValue; 
+                    output.append(symbols[i + 2]).append(symbols[i]); 
+                }
+            } else if (i % 2 != 0 && i < values.length - 1) {
+                int subtractionValue = values[i] - values[i + 1];
+                if (num >= subtractionValue) {
+                    num -= subtractionValue;
+                    output.append(symbols[i + 1]).append(symbols[i]); 
+                }
+            }
+        }
+
+        return output.toString();
+        
+    }
 
     // 11. Container With Most Water
     //https://leetcode.com/problems/container-with-most-water/description/
