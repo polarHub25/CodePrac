@@ -1,6 +1,9 @@
 package GroupStudy;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -10,11 +13,47 @@ public class Prepare {
         
         Prepare pre = new Prepare();
 
-        int num = 3749;
-        
-        String output = pre.intToRoman(num);
-        System.out.println("Integer: " + num + " -> Roman: " + output);
+        int num[] = {-1, 0, 1, 2, -1, -4};
+        System.out.println(pre.threeSum(num));
 
+    }
+
+    // 15. 3Sum 
+    // https://leetcode.com/problems/3sum/description/
+     public List<List<Integer>> threeSum(int[] nums) {
+        // 시간 복잡도 : O(n^2)
+        // 공간 복잡도 : O(n)
+        
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums); // O(nlogn)
+
+        for(int i = 0; i < nums.length-2; i++){ // O(n) 
+
+            if(i > 0 && nums[i] == nums[i-1]) continue;
+
+            int second = i + 1;
+            int third = nums.length - 1;
+
+            while (second < third){ // O(n) 
+                int sum = nums[i] + nums[second] + nums[third];
+
+                if(sum == 0){
+                    result.add(Arrays.asList(nums[i], nums[second], nums[third]));
+                    second++;
+                    third--;
+                
+                    while(second < third && nums[second] == nums[second -1]) second++;
+                    while(second < third && nums[third] == nums[third + 1]) third--;
+                } else if (sum < 0){
+                    second++;
+                } else {
+                    third--;
+                }
+            }
+
+        }
+
+        return result;
     }
 
     // 12. Integer to Roman
@@ -34,15 +73,15 @@ public class Prepare {
             }
 
             if (i % 2 == 0 && i < values.length - 2) {
-                int subtractionValue = values[i] - values[i + 2];
-                if (num >= subtractionValue) {
-                    num -= subtractionValue; 
+                int subValue = values[i] - values[i + 2];
+                if (num >= subValue) {
+                    num -= subValue; 
                     output.append(symbols[i + 2]).append(symbols[i]); 
                 }
             } else if (i % 2 != 0 && i < values.length - 1) {
-                int subtractionValue = values[i] - values[i + 1];
-                if (num >= subtractionValue) {
-                    num -= subtractionValue;
+                int subValue = values[i] - values[i + 1];
+                if (num >= subValue) {
+                    num -= subValue;
                     output.append(symbols[i + 1]).append(symbols[i]); 
                 }
             }
