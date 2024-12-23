@@ -30,7 +30,7 @@ public class LeetCode_07 {
             if(result < Integer.MIN_VALUE / 10 || (result == Integer.MIN_VALUE / 10 && digit < -8)){
                 return 0;
             }
-            return result + 10 + digit;
+            result = result + 10 + digit;
         }
         return result;
     }
